@@ -39,6 +39,8 @@ php artisan turbine:install
   - Update name, email
   - Update password
 
+View the [screenshots](https://github.com/clarkeash/turbine/tree/main/screenshots)
+
  ## Inspiration
 
  - [Laravel Breeze](https://github.com/laravel/breeze)
