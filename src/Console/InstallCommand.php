@@ -43,6 +43,17 @@ class InstallCommand extends Command
 
     public function setupFrontEnd(): bool
     {
+        // Install standard NPM packages (vite etc)
+        $process = new Process(['npm', 'install']);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            error('Failed to build');
+            error($process->getErrorOutput());
+            note('Try running: npm install');
+            return false;
+        }
+
         // Install Tailwind
         if (!$this->hasNPMPackage('tailwindcss')) {
             $args = [
@@ -55,6 +66,7 @@ class InstallCommand extends Command
 
             if (!$process->isSuccessful()) {
                 error('Failed to install Tailwind');
+                error($process->getErrorOutput());
                 note('Try running: ' . implode(' ', $args));
                 return false;
             }
@@ -75,6 +87,7 @@ class InstallCommand extends Command
 
         if (!$process->isSuccessful()) {
             error('Failed to build');
+            error($process->getErrorOutput());
             note('Try running: npm run build');
             return false;
         }
