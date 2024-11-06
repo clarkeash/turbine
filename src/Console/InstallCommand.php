@@ -26,6 +26,7 @@ class InstallCommand extends Command
     {
         // Install Flux Pro
         if (!$this->hasComposerPackage('livewire/flux-pro')) {
+            info('Installing Flux Pro');
             $this->call('flux:activate');
         }
 
@@ -57,11 +58,6 @@ class InstallCommand extends Command
                 note('Try running: ' . implode(' ', $args));
                 return false;
             }
-        }
-
-        if (file_exists(base_path('tailwind.config.js'))) {
-            error('tailwind.config.js already exists.');
-            return false;
         }
 
         // Copy Configs
