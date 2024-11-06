@@ -98,8 +98,8 @@ class InstallCommand extends Command
     public function setupBackend()
     {
         // Livewire...
-        (new Filesystem)->ensureDirectoryExists(app_path('Http/Livewire'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/app/Http/Livewire', app_path('Http/Livewire'));
+        (new Filesystem)->ensureDirectoryExists(app_path('Livewire'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/app/Livewire', app_path('Livewire'));
 
         // Views...
         (new Filesystem)->ensureDirectoryExists(resource_path('views'));
