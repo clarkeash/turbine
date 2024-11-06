@@ -8,8 +8,24 @@ Turbine is a starter kit for Laravel making use of [Livewire](https://livewire.l
 
 ## Installation
 
+### Create new laravel application
+
+Install with no starter kit etc, and run migrations.
+
+```shell
+laravel new my-app
+```
+
+Install turbine
+
 ```shell
 composer require clarkeash/turbine
+```
+
+Run installation command
+
+```shell
+php artisan turbine:install
 ```
 
 ## Features
