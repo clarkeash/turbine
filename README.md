@@ -1,3 +1,7 @@
+<p align="center">
+    <img alt="Turbine AI Generated Logo" src="/logo.png">
+</p>
+
 # Turbine
 
 ## Intro
