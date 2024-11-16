@@ -2,6 +2,9 @@
 
 namespace Clarkeash\Turbine\Concerns;
 
+use Illuminate\Support\Composer;
+use Symfony\Component\Process\Process;
+
 trait InteractsWithComposer
 {
     /**
@@ -16,5 +19,18 @@ trait InteractsWithComposer
 
         return array_key_exists($package, $packages['require'] ?? [])
             || array_key_exists($package, $packages['require-dev'] ?? []);
+    }
+
+    protected function fluxAuthIsConfigured(): bool
+    {
+        /** @var Composer $composer */
+        $composer = app(Composer::class);
+        $command = array_merge($composer->findComposer(), ['config', 'http-basic.composer.fluxui.dev.username']);
+
+        $process = (new Process($command, base_path()))->setTimeout(null);
+
+        $process->run();
+
+        return $process->isSuccessful() && !empty(trim($process->getOutput()));
     }
 }
