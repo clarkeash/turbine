@@ -59,13 +59,17 @@ class Prepare
             rename(database_path('migrations/0001_01_01_000002_create_jobs_table.php'), database_path('migrations/0001_01_01_000003_create_jobs_table.php'));
         }
 
+        copy(__DIR__ . '/../../stubs/teams/database/migrations/0001_01_01_000004_create_invitations_table.php', database_path('migrations/0001_01_01_000004_create_invitations_table.php'));
+
         // Models
         copy(__DIR__ . '/../../stubs/teams/app/Models/Team.php', app_path('Models/Team.php'));
         copy(__DIR__ . '/../../stubs/teams/app/Models/User.php', app_path('Models/User.php'));
+        copy(__DIR__ . '/../../stubs/teams/app/Models/Invitation.php', app_path('Models/Invitation.php'));
 
         // Factories
         copy(__DIR__ . '/../../stubs/teams/database/factories/TeamFactory.php', database_path('factories/TeamFactory.php'));
         copy(__DIR__ . '/../../stubs/teams/database/factories/UserFactory.php', database_path('factories/UserFactory.php'));
+        copy(__DIR__ . '/../../stubs/teams/database/factories/InvitationFactory.php', database_path('factories/InvitationFactory.php'));
 
         // Overwrite Registration
         copy(__DIR__ . '/../../stubs/teams/app/Livewire/Auth/Register.php', app_path('Livewire/Auth/Register.php'));
@@ -84,14 +88,14 @@ class Prepare
         (new Filesystem)->ensureDirectoryExists(resource_path('views/livewire/settings/team'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/teams/resources/views/livewire/settings/team', resource_path('views/livewire/settings/team'));
 
+        // Add Invite Page
+        copy(__DIR__ . '/../../stubs/teams/app/Livewire/Auth/Invitation.php', app_path('Livewire/Auth/Invitation.php'));
+        copy(__DIR__ . '/../../stubs/teams/resources/views/livewire/auth/invitation.blade.php', resource_path('views/livewire/auth/invitation.blade.php'));
 
-
-        // Add Invitations Model
-
-        // Add Invitations Factory
-
-        // Add Invitations Migration
-
-        // Add Page to manage team members
+        // Add Invite Mail
+        (new Filesystem)->ensureDirectoryExists(app_path('Mail'));
+        copy(__DIR__ . '/../../stubs/teams/app/Mail/TeamInvite.php', app_path('Mail/TeamInvite.php'));
+        (new Filesystem)->ensureDirectoryExists(resource_path('views/mail'));
+        copy(__DIR__ . '/../../stubs/teams/resources/views/mail/team-invite.blade.php', resource_path('views/mail/team-invite.blade.php'));
     }
 }

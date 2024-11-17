@@ -28,6 +28,8 @@ class Personal extends Component
             'email' => $this->email,
         ])->save();
 
+        $this->dispatch('user.updated.{auth()->user()->id}');
+
         Flux::toast('Your changes have been saved.');
     }
 

@@ -57,10 +57,15 @@
 
                 <flux:input type="email" wire:model="email" label="Email" />
 
-                <flux:radio.group wire:model="role" label="Role">
-                    <flux:radio value="admin" label="Admin" description="Administrator users can perform any action." checked />
-                    <flux:radio value="editor" label="Editor" description="Editors have the ability to read, create, and update." />
-                    <flux:radio value="viewer" label="Viewer" description="Viewer users can only read." />
+                <flux:radio.group label="Role" wire:model="role">
+                    @foreach(\App\Enums\Role::cases() as $role)
+                        <flux:radio
+                                name="role"
+                                value="{{ $role->value }}"
+                                label="{{ $role->name }}"
+                                description="{{ $role->description() }}"
+                        />
+                    @endforeach
                 </flux:radio.group>
 
                 <div class="flex">
