@@ -42,8 +42,23 @@ php artisan turbine:install
 - Profile Settings
   - Update name, email
   - Update password
+- Team Support
+- Legal Pages
+  - Privacy Policy (`/privacy`)
+  - Terms of Service (`/terms`)
 
 View the [screenshots](https://github.com/clarkeash/turbine/tree/main/screenshots)
+
+## Team Support
+
+We handle team support a little differently to things like laravel jetstream, we don't support users being on multiple teams, so we just have a `team_id` on the user table.
+We support the following team features:
+
+- Inviting users to a team
+- Removing users from a team
+- Editing the user details on a team
+- Updating the team name
+- We have team roles (admin, editor, viewer) which you can customise (see `app/Enums/Role`), we dont assign any permissions or checks for these roles.
 
  ## Inspiration
 
