@@ -16,8 +16,14 @@
     <!-- Flux -->
     @fluxStyles
 </head>
-<body class="font-sans antialiased min-h-screen bg-zinc-50 dark:bg-zinc-800">
-{{ $slot }}
+<body class="font-sans antialiased min-h-screen bg-zinc-50 dark:bg-zinc-800 flex flex-col justify-between">
+<div class="mb-auto">
+    {{ $slot }}
+</div>
+<footer class="h-10 bg-zinc-50 dark:bg-zinc-900 flex items-center p-4">
+    <flux:link class="text-sm mr-4" href="{{ route('legal.terms') }}" wire:navigate>Terms</flux:link>
+    <flux:link class="text-sm" href="{{ route('legal.privacy') }}" wire:navigate>Privacy Policy</flux:link>
+</footer>
 @persist('toast')
 <flux:toast/>
 @endpersist

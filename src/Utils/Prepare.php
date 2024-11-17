@@ -16,13 +16,20 @@ class Prepare
         // Copy app.css
         copy(__DIR__ . '/../../stubs/base/resources/css/app.css', resource_path('css/app.css'));
 
-        // Livewire...
+        // Livewire
         (new Filesystem)->ensureDirectoryExists(app_path('Livewire'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/base/app/Livewire', app_path('Livewire'));
 
-        // Views...
+        // Views
         (new Filesystem)->ensureDirectoryExists(resource_path('views'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/base/resources/views', resource_path('views'));
+
+        // Markdown
+        (new Filesystem)->ensureDirectoryExists(resource_path('markdown'));
+        (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/base/resources/markdown', resource_path('markdown'));
+
+        // Controllers
+        copy(__DIR__ . '/../../stubs/base/app/Http/Controllers/LegalController.php', app_path('Http/Controllers/LegalController.php'));
 
         // Models
         copy(__DIR__ . '/../../stubs/base/app/Models/User.php', app_path('Models/User.php'));
@@ -37,11 +44,11 @@ class Prepare
         (new Filesystem)->ensureDirectoryExists(app_path('Enums'));
         copy(__DIR__ . '/../../stubs/teams/app/Enums/Role.php', app_path('Enums/Role.php'));
 
-        // Livewire...
+        // Livewire
         (new Filesystem)->ensureDirectoryExists(app_path('Livewire/Teams'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/teams/app/Livewire/Teams', app_path('Livewire/Teams'));
 
-        // Views...
+        // Views
         (new Filesystem)->ensureDirectoryExists(resource_path('views/teams'));
         (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/teams/resources/views/teams', resource_path('views/teams'));
         copy(__DIR__ . '/../../stubs/teams/resources/views/components/navigation.blade.php', resource_path('views/components/navigation.blade.php'));

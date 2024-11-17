@@ -35,13 +35,8 @@ class InstallCommand extends Command
         // FrontEnd Setup
         $npm = Npm::make();
         $npm->install();
-        $npm->installPackages(['tailwindcss', 'postcss', 'autoprefixer']);
+        $npm->installPackages(['tailwindcss', 'postcss', 'autoprefixer', '@tailwindcss/typography']);
 
         outro('Your Turbine starter kit is now ready!');
-    }
-
-    public function setupProvider()
-    {
-
     }
 }

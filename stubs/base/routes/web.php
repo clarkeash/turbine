@@ -6,6 +6,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('terms', [\App\Http\Controllers\LegalController::class, 'terms'])->name('legal.terms');
+Route::get('privacy', [\App\Http\Controllers\LegalController::class, 'privacy'])->name('legal.privacy');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', \App\Livewire\Pages\Dashboard::class)->name('dashboard');
 
