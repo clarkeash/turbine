@@ -32,6 +32,12 @@ Run installation command
 php artisan turbine:install
 ```
 
+Or with team support
+
+```shell
+php artisan turbine:install --teams
+```
+
 ## Features
 
 - Login
