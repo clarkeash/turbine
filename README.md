@@ -60,7 +60,14 @@ We support the following team features:
 - Updating the team name
 - We have team roles (admin, editor, viewer) which you can customise (see `app/Enums/Role`), we dont assign any permissions or checks for these roles.
 
- ## Inspiration
+## Screenshots
+| | |
+|:-------------------------:|:-------------------------:|
+|<img src="screenshots/login.png?raw=true">|<img src="screenshots/register.png?raw=true">|
+|<img src="screenshots/password-reset.png?raw=true">|<img src="screenshots/dashboard.png?raw=true">|
+|<img src="screenshots/profile-settings.png?raw=true">|<img src="screenshots/team.png?raw=true">|
+
+## Inspiration
 
  - [Laravel Breeze](https://github.com/laravel/breeze)
  - [Fission Starter Kit](https://github.com/joshcirre/fission) by Josh Cirre
