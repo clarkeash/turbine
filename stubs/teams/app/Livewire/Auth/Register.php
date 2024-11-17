@@ -32,7 +32,7 @@ class Register extends Component
         $validated['password'] = Hash::make($validated['password']);
 
         $team = Team::create(['name' => $validated['team']]);
-        $user = $team->users()->create([
+        $user = $team->members()->create([
             ...$validated,
             'role' => Role::Admin,
         ]);

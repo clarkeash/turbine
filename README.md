@@ -40,6 +40,12 @@ php artisan turbine:install --teams
 php artisan migrate:fresh
 ```
 
+Build the assets
+
+```shell
+npm run build
+```
+
 ## Features
 
 - Login
