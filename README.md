@@ -14,7 +14,7 @@ Turbine is a starter kit for Laravel making use of [Livewire](https://livewire.l
 
 ### Create new laravel application
 
-Install with no starter kit etc, and run migrations.
+Install with no starter kit etc.
 
 ```shell
 laravel new my-app
@@ -30,12 +30,14 @@ Run installation command
 
 ```shell
 php artisan turbine:install
+php artisan migrate:fresh
 ```
 
 Or with team support
 
 ```shell
 php artisan turbine:install --teams
+php artisan migrate:fresh
 ```
 
 ## Features
