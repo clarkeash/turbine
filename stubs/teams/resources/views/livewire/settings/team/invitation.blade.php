@@ -1,17 +1,17 @@
-<flux:row>
-    <flux:cell class="flex items-center gap-3">
+<flux:table.row>
+    <flux:table.cell class="flex items-center gap-3">
         {{ $member->email }}
-    </flux:cell>
+    </flux:table.cell>
 
-    <flux:cell>
+    <flux:table.cell>
         <flux:badge size="sm" inset="top bottom">{{ $member->created_at->diffForHumans() }}</flux:badge>
-    </flux:cell>
+    </flux:table.cell>
 
-    <flux:cell>
+    <flux:table.cell>
         <flux:badge size="sm" :color="$member->role->badgeColour()" inset="top bottom">{{ $member->role->name }}</flux:badge>
-    </flux:cell>
+    </flux:table.cell>
 
-    <flux:cell>
+    <flux:table.cell>
         <flux:button wire:click="remove" icon="trash" variant="ghost" inset="top bottom" size="sm"></flux:button>
         <flux:modal name="invitation-remove" class="min-w-[22rem]">
             <form class="space-y-6" wire:submit="$parent.remove({{ $member->id }})">
@@ -34,5 +34,5 @@
                 </div>
             </form>
         </flux:modal>
-    </flux:cell>
-</flux:row>
+    </flux:table.cell>
+</flux:table.row>

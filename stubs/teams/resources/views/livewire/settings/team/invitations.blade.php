@@ -13,18 +13,18 @@
                 </flux:card>
             @else
                 <flux:table :paginate="$this->members">
-                    <flux:columns>
-                        <flux:column>Name</flux:column>
-                        <flux:column>Invitation Sent</flux:column>
-                        <flux:column>Role</flux:column>
-                        <flux:column></flux:column>
-                    </flux:columns>
+                    <flux:table.columns>
+                        <flux:table.column>Name</flux:table.column>
+                        <flux:table.column>Invitation Sent</flux:table.column>
+                        <flux:table.column>Role</flux:table.column>
+                        <flux:table.column></flux:table.column>
+                    </flux:table.columns>
 
-                    <flux:rows>
+                    <flux:table.rows>
                         @foreach ($this->members as $member)
                             <livewire:settings.team.invitation :member="$member" :key="$member->id"/>
                         @endforeach
-                    </flux:rows>
+                    </flux:table.rows>
                 </flux:table>
             @endif
         </div>

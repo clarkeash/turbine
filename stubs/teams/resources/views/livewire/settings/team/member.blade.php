@@ -1,19 +1,19 @@
-<flux:row>
-    <flux:cell class="flex items-center gap-3" variant="strong">
+<flux:table.row>
+    <flux:table.cell class="flex items-center gap-3" variant="strong">
         <flux:avatar size="xs" src="{{ $member->avatar }}"/>
         {{ $member->name }}
         @if($member->id == auth()->id())
             <flux:badge size="sm">You</flux:badge>
         @endif
-    </flux:cell>
+    </flux:table.cell>
 
-    <flux:cell class="whitespace-nowrap">{{ $member->created_at->toDayDateTimeString() }}</flux:cell>
+    <flux:table.cell class="whitespace-nowrap">{{ $member->created_at->toDayDateTimeString() }}</flux:table.cell>
 
-    <flux:cell>
+    <flux:table.cell>
         <flux:badge size="sm" :color="$member->role->badgeColour()" inset="top bottom">{{ $member->role->name }}</flux:badge>
-    </flux:cell>
+    </flux:table.cell>
 
-    <flux:cell>
+    <flux:table.cell>
         <flux:dropdown>
             <flux:button icon="ellipsis-horizontal" variant="ghost" inset="top bottom" size="sm"></flux:button>
 
@@ -75,5 +75,5 @@
                 </div>
             </form>
         </flux:modal>
-    </flux:cell>
-</flux:row>
+    </flux:table.cell>
+</flux:table.row>

@@ -8,11 +8,6 @@ class Prepare
 {
     public static function base()
     {
-        // Copy Configs
-        copy(__DIR__ . '/../../stubs/base/tailwind.config.js', base_path('tailwind.config.js'));
-        copy(__DIR__ . '/../../stubs/base/postcss.config.js', base_path('postcss.config.js'));
-        copy(__DIR__ . '/../../stubs/base/vite.config.js', base_path('vite.config.js'));
-
         // Copy app.css
         copy(__DIR__ . '/../../stubs/base/resources/css/app.css', resource_path('css/app.css'));
 

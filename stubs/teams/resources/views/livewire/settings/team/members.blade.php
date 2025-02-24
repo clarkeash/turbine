@@ -6,18 +6,18 @@
     <div class="w-2/3">
         <div class="space-y-6">
             <flux:table :paginate="$this->members">
-                <flux:columns>
-                    <flux:column>Name</flux:column>
-                    <flux:column>Member Since</flux:column>
-                    <flux:column>Role</flux:column>
-                    <flux:column></flux:column>
-                </flux:columns>
+                <flux:table.columns>
+                    <flux:table.column>Name</flux:table.column>
+                    <flux:table.column>Member Since</flux:table.column>
+                    <flux:table.column>Role</flux:table.column>
+                    <flux:table.column></flux:table.column>
+                </flux:table.columns>
 
-                <flux:rows>
+                <flux:table.rows>
                     @foreach ($this->members as $member)
                         <livewire:settings.team.member :member="$member" :key="$member->id"/>
                     @endforeach
-                </flux:rows>
+                </flux:table.rows>
             </flux:table>
         </div>
     </div>

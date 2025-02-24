@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Flux -->
-    @fluxStyles
+    @fluxAppearance
 </head>
 <body class="min-h-screen bg-white dark:bg-zinc-800">
 <x-navigation/>

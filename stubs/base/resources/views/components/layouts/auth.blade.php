@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Flux -->
-    @fluxStyles
+    @fluxAppearance
 </head>
 <body class="font-sans antialiased flex justify-center items-center m-auto max-w-md min-h-screen bg-zinc-50 dark:bg-zinc-800">
 <div class="w-full">
