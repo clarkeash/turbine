@@ -4,6 +4,8 @@
         up-to-date.
     </flux:subheading>
     <flux:separator variant="subtle" class="my-4"/>
+    <livewire:settings.account.appearance/>
+    <flux:separator variant="subtle" class="my-4"/>
     <livewire:settings.account.personal/>
     <flux:separator variant="subtle" class="my-4"/>
     <livewire:settings.account.password/>
